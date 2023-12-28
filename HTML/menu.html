@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Playfair+Display:ital@1&family=Viga&display=swap" rel="stylesheet">
+  <style>
+    body {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      background: url("https://static.vecteezy.com/system/resources/previews/004/275/702/original/fast-food-seamless-background-illustration-simple-restaurant-menu-background-vector.jpg") center/cover fixed no-repeat;
+      background-attachment: fixed;
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    #brand {
+      text-align: center;
+      font-size: 60px;
+      font-family:'Times New Roman', Times, serif;
+      color: black;
+      margin-top: 20px;
+    }
+
+    .steak, .kebab2, .mint {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      margin: 20px auto;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    }
+
+    .breakfast, .lunch, .drink {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    hr {
+      width: 80%;
+      margin: 10px auto;
+      border: 0.5px solid #000;
+    }
+
+    li span {
+      margin-top: 10px;
+      font-size: 20px;
+      color: #555;
+    }
+
+    @media screen and (max-width: 768px) {
+      .steak, .breakfast, .lunch, .drink, .kebab2, .mint {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="name">
+    <p id="brand"><strong>Turbo Taste</strong></p>
+  </div>
+  <div class="breakfast">
+    <p id="breakfast">Breakfast</p>
+    <hr>
+    <ul>
+      <li>Chicken Kebab <span class="price">$14</span>
+        <p>Grilled chicken with spices served on skewers.</p>
+      </li>
+      <li>Steak Kebab <span class="price">$18</span>
+        <p>Tender steak marinated and grilled to perfection.</p>
+      </li>
+      <li>Zesty Pita <span class="price">$12</span>
+        <p>Delicious pita with a zesty twist.</p>
+      </li>
+    </ul>
+  </div>
+  <div class="lunch">
+    <p id="lunch">Lunch</p>
+    <hr>
+    <ul>
+      <li>Lamb Chop <span class="price">$14</span>
+        <p>Juicy lamb chops seasoned and grilled.</p>
+      </li>
+      <li>Lamb Shank <span class="price">$18</span>
+        <p>Tender lamb shank slow-cooked to perfection.</p>
+      </li>
+      <li>Gyro Steak <span class="price">$12</span>
+        <p>Flavorful gyro steak served with your choice of sides.</p>
+      </li>
+    </ul>
+  </div>
+  <div class="drink">
+    <p id="drinks">Drinks</p>
+    <hr>
+    <ul>
+      <li>Blueberry Lemonade <span class="price">$14</span>
+        <p>Refreshing lemonade infused with blueberries.</p>
+      </li>
+      <li>Cream Soda <span class="price">$18</span>
+        <p>Classic cream soda with a twist.</p>
+      </li>
+      <li>Smash Pineapple <span class="price">$12</span>
+        <p>Smashing pineapple drink to brighten your day.</p>
+      </li>
+    </ul>
+  </div>
+  <div class="delivery"></div>
+</body>
+</html>

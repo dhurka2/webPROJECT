@@ -1,9 +1,28 @@
+nav {
+  background-color: #E7B10A !important;
+}
 .foto1 {
-    height: 80px;
-    width: 80px;
-    
+    height: 80px !important;
+    width: 80px !important;}
+body {
+  background-color: #BFD202 !important;
 }
 
+h1, p {
+  margin-top: 200px !important;
+  margin-left: 120px !important;
+}
+
+h1 {
+  font-size: 100px !important;
+  color: #0A5247 !important;
+}
+
+p {
+  margin-top: 5px !important;
+  color: #0A5247 !important;
+  font-size: 30px !important;
+}
 .landing {
     display: flex;
     justify-content: center;
@@ -30,7 +49,7 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     font-size: 14px;
-    background-color: #f4f4f4;
+    background-color: #4F6F52;
     align-items: start;
     min-height: 100vh;
   }
@@ -38,10 +57,9 @@
   .footer {
     display: flex;
     flex-flow: row wrap;
-    padding: 30px 30px 20px 30px;
+    padding: 40px 30px 20px 30px;
     color: #2f2f2f;
     background-color: #fff;
-    border-top: 1px solid #e5e5e5;
   }
   
   .footer > * {
@@ -134,34 +152,101 @@
     align-items: center;
   }
   
-  .heart {
-    color: #2f2f2f;
-  }
   
-  @media screen and (min-width: 24.375em) {
-    .legal .legal__links {
-      margin-left: auto;
-    }
-  }
   
-  @media screen and (min-width: 40.375em) {
-    .footer__nav > * {
-      flex: 1;
-    }
-    
-    .nav__item--extra {
-      flex-grow: 2;
-    }
-    
-    .footer__addr {
-      flex: 1 0px;
-    }
-    
-    .footer__nav {
-      flex: 2 0px;
-    }
-  }
+ 
 
   .text-danger {
     color: red
   }
+
+  .order {
+    text-decoration: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    body {
+      background-size: auto;
+    }
+  }
+
+  h1, p {
+    margin-top: 200px;
+    margin-left: 120px;
+}
+
+h1 {
+    font-size: 100px;
+    color: #0A5247;
+}
+
+p {
+    margin-top: 5px;
+    color: #0A5247;
+    font-size: 30px;
+}
+
+.btn, .btn-primary, .btn-lg {
+    margin-left: 120px !important;
+    background-color: white !important;
+    color: #0A5247 !important;
+}
+
+.foto1 {
+    height: 80px;
+    width: 80px;
+    margin-left: 120px;
+    margin-right: 20px;
+}
+
+#foto {
+    width: 820px;
+    height: 952px;
+    margin-left: 1100px;
+    margin-top: -670px;
+}
+
+
+
+body {
+  font-size: 16px !important; 
+}
+
+.navbar-brand img {
+  max-width: 100% !important; 
+}
+
+
+@media (max-width: 767px) {
+  body {
+      font-size: 14px !important; 
+  }
+
+  #foto {
+      display: none !important; 
+  }
+
+  h1, p {
+      margin-top: 50px !important; 
+      margin-left: 20px !important; 
+      font-size: 60px !important; 
+  }
+
+  .btn, .btn-primary, .btn-lg {
+      margin-left: 20px !important; 
+  }
+
+  .foto1 {
+      margin-left: 20px !important; 
+  }
+}
+
+/* Styles for tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  #foto {
+      width: 820px !important;
+      height: 952px !important;
+      margin-left: 20px !important; 
+      margin-top: -670px !important; 
+  }
+}
