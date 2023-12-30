@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Playfair+Display:ital@1&family=Viga&display=swap" rel="stylesheet">
   <style>
-    body {
+    .dc-thebody {
       position: relative;
       margin: 0;
       padding: 0;
@@ -18,7 +18,7 @@
       z-index: -1;
     }
 
-    #brand {
+    #dc-thebrand {
       text-align: center;
       font-size: 60px;
       font-family:'Times New Roman', Times, serif;
@@ -26,7 +26,7 @@
       margin-top: 20px;
     }
 
-    .steak, .kebab2, .mint {
+    .dc-thesteak, .dc-thekebab2, .dc-themint {
       width: 100%;
       max-width: 220px;
       height: auto;
@@ -36,7 +36,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     }
 
-    .breakfast, .lunch, .drink {
+    .dc-thebreakfast, .dc-thelunch, .dc-thedrink {
       text-align: center;
       background-color: rgba(255, 255, 255, 1);
       border-radius: 10px;
@@ -44,12 +44,12 @@
       margin: 20px auto;
     }
 
-    ul {
+    .dc-theul {
       list-style-type: none;
       padding: 0;
     }
 
-    li {
+    .dc-theli {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -57,74 +57,75 @@
       margin-bottom: 20px;
     }
 
-    hr {
+    .dc-thehr {
       width: 80%;
       margin: 10px auto;
       border: 0.5px solid #000;
     }
 
-    li span {
+    .dc-thespan {
       margin-top: 10px;
       font-size: 20px;
       color: #555;
     }
 
     @media screen and (max-width: 768px) {
-      .steak, .breakfast, .lunch, .drink, .kebab2, .mint {
+      .dc-thesteak, .dc-thebreakfast, .dc-thelunch, .dc-thedrink, .dc-thekebab2, .dc-themint {
         max-width: 100%;
       }
     }
   </style>
 </head>
-<body>
-  <div class="name">
-    <p id="brand"><strong>Turbo Taste</strong></p>
+<body class="dc-thebody">
+  <div class="dc-thename">
+    <p id="dc-thebrand"><strong>Turbo Taste</strong></p>
   </div>
-  <div class="breakfast">
-    <p id="breakfast">Breakfast</p>
-    <hr>
-    <ul>
-      <li>Chicken Kebab <span class="price">$14</span>
+  <div class="dc-thebreakfast">
+    <p id="dc-thebreakfast">Breakfast</p>
+    <hr class="dc-thehr">
+    <ul class="dc-theul">
+      <li class="dc-theli">Chicken Kebab <span class="dc-theprice">$14</span>
         <p>Grilled chicken with spices served on skewers.</p>
       </li>
-      <li>Steak Kebab <span class="price">$18</span>
+      <li class="dc-theli">Steak Kebab <span class="dc-theprice">$18</span>
         <p>Tender steak marinated and grilled to perfection.</p>
       </li>
-      <li>Zesty Pita <span class="price">$12</span>
+      <li class="dc-theli">Zesty Pita <span class="dc-theprice">$12</span>
         <p>Delicious pita with a zesty twist.</p>
       </li>
     </ul>
   </div>
-  <div class="lunch">
-    <p id="lunch">Lunch</p>
-    <hr>
-    <ul>
-      <li>Lamb Chop <span class="price">$14</span>
+  <div class="dc-thelunch">
+    <p id="dc-thelunch">Lunch</p>
+    <hr class="dc-thehr">
+    <ul class="dc-theul">
+      <li class="dc-theli">Lamb Chop <span class="dc-theprice">$14</span>
         <p>Juicy lamb chops seasoned and grilled.</p>
       </li>
-      <li>Lamb Shank <span class="price">$18</span>
+      <li class="dc-theli">Lamb Shank <span class="dc-theprice">$18</span>
         <p>Tender lamb shank slow-cooked to perfection.</p>
       </li>
-      <li>Gyro Steak <span class="price">$12</span>
+      <li class="dc-theli">Gyro Steak <span class="dc-theprice">$12</span>
         <p>Flavorful gyro steak served with your choice of sides.</p>
       </li>
     </ul>
   </div>
-  <div class="drink">
-    <p id="drinks">Drinks</p>
-    <hr>
-    <ul>
-      <li>Blueberry Lemonade <span class="price">$14</span>
+  <div class="dc-thedrink">
+    <p id="dc-thedrinks">Drinks</p>
+    <hr class="dc-thehr">
+    <ul class="dc-theul">
+      <li class="dc-theli">Blueberry Lemonade <span class="dc-theprice">$14</span>
         <p>Refreshing lemonade infused with blueberries.</p>
       </li>
-      <li>Cream Soda <span class="price">$18</span>
+      <li class="dc-theli">Cream Soda <span class="dc-theprice">$18</span>
         <p>Classic cream soda with a twist.</p>
       </li>
-      <li>Smash Pineapple <span class="price">$12</span>
+      <li class="dc-theli">Smash Pineapple <span class="dc-theprice">$12</span>
         <p>Smashing pineapple drink to brighten your day.</p>
       </li>
     </ul>
   </div>
-  <div class="delivery"></div>
+  <div class="dc-thedelivery"></div>
 </body>
 </html>
+
