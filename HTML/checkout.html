@@ -13,11 +13,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-    }
-
-    h2 {
-      color: #333;
+      min-height: 100vh;
     }
 
     form {
@@ -37,13 +33,14 @@
     }
 
     input, select {
-      width: 100%;
+      width: calc(100% - 16px);
       padding: 8px;
       margin-bottom: 16px;
       box-sizing: border-box;
     }
 
     button {
+      width: calc(50% - 4px);
       background-color: #4caf50;
       color: #fff;
       padding: 10px 15px;
@@ -54,6 +51,20 @@
 
     button:hover {
       background-color: #45a049;
+    }
+
+    #applyButton {
+      width: calc(50% - 4px);
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #applyButton:hover {
+      background-color: #2980b9;
     }
   </style>
 </head>
@@ -79,13 +90,17 @@
       <!-- Add more payment options as needed -->
     </select>
 
-  <button type="button"><a href="thankyou.html">Order</a></button>
+    <label for="promocode">Promo Code:</label>
+    <input type="text" id="promocode" name="promocode">
+
+    <!-- Added the ID attribute to the button -->
+    <button type="button" id="orderButton">Order</button>
+
+    <!-- Added Apply button -->
+    <button type="button" id="applyButton" onclick="applyPromoCode()">Apply</button>
   </form>
 
   <script>
-    // JavaScript functions to handle checkout process
-    
-
     const storedCartItems = sessionStorage.getItem('cartItems');
     const cartItems = storedCartItems ? JSON.parse(storedCartItems) : [];
     const totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
@@ -104,9 +119,32 @@
 
     document.body.appendChild(priceDisplay);
 
-   
+    // Add event listener for the Order button
+    document.getElementById('orderButton').addEventListener('click', function () {
+      // You can add order logic here
+      alert('Order placed successfully!');
+    });
 
+    function applyPromoCode() {
+      const promoCodeInput = document.getElementById('promocode');
+      const promoCode = promoCodeInput.value.trim().toLowerCase();
+
+      // Check if the entered promo code is "tasty"
+      if (promoCode === 'tasty') {
+        // Apply discount or other logic here
+        alert('Promo code applied successfully!');
+        // Update the total amount display with a 20% discount
+        const discountedAmount = totalAmount * 0.8; // Subtract 20%
+        priceDisplay.textContent = `Total: $${discountedAmount.toFixed(2)}`;
+      } else {
+        alert('Invalid promo code. Please try again.');
+      }
+    }
   </script>
+
+</body>
+</html>
+
 
 
 
