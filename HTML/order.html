@@ -207,10 +207,10 @@
     const cartItemsElement = document.getElementById('cartItems');
     const totalAmountElement = document.getElementById('totalAmount');
 
-    // Clear the cart
+  
     cartItemsElement.innerHTML = '';
 
-    // Update the cart items
+   
     cartItems.forEach(item => {
       const listItem = document.createElement('li');
       listItem.className = 'cart-item';
@@ -218,17 +218,17 @@
       cartItemsElement.appendChild(listItem);
     });
 
-    // Update the total amount
+    
     totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
     totalAmountElement.textContent = totalAmount.toFixed(2);
 
-    // Store the cart items in session storage
+   
     sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
   }
 
   function checkout() {
-    // Redirect to the checkout page
-    window.location.href = "/HTML/checkout.html";
+    
+    window.location.href = "https://dhurka2.github.io/webPROJECT/HTML/checkout.html";
   }
 </script>
 
