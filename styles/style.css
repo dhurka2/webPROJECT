@@ -192,7 +192,7 @@ p {
     color: #0A5247 !important;
 }
 
-.foto1 {
+.dc-foto1 {
     height: 80px;
     width: 80px;
     margin-left: 120px;
@@ -236,7 +236,7 @@ body {
       margin-left: 20px !important; 
   }
 
-  .foto1 {
+  .dc-foto1 {
       margin-left: 20px !important; 
   }
 }
