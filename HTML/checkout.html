@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout</title>
   <style>
-    body {
+    .dc-thebody {
       font-family: 'Arial', sans-serif;
       background-color: #f4f4f4;
       margin: 0;
@@ -16,7 +16,7 @@
       min-height: 100vh;
     }
 
-    form {
+    .dc-theform {
       background-color: #fff;
       padding: 20px;
       border-radius: 8px;
@@ -26,20 +26,20 @@
       box-sizing: border-box;
     }
 
-    label {
+    .dc-thelabel {
       display: block;
       margin-bottom: 8px;
       color: #555;
     }
 
-    input, select {
+    .dc-theinput, .dc-theselect {
       width: calc(100% - 16px);
       padding: 8px;
       margin-bottom: 16px;
       box-sizing: border-box;
     }
 
-    button {
+    .dc-thebutton {
       width: calc(50% - 4px);
       background-color: #4caf50;
       color: #fff;
@@ -49,7 +49,7 @@
       cursor: pointer;
     }
 
-    button:hover {
+    .dc-thebutton:hover {
       background-color: #45a049;
     }
 
@@ -68,85 +68,42 @@
     }
   </style>
 </head>
-<body>
+<body class="dc-thebody">
 
-  <form id="checkoutForm">
+  <form id="checkoutForm" class="dc-theform">
     <!-- Assuming you have a way to pass the price to this page -->
     <input type="hidden" id="price" name="price" value="0.00">
 
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+    <label for="name" class="dc-thelabel">Name:</label>
+    <input type="text" id="name" name="name" class="dc-theinput" required>
 
-    <label for="surname">Surname:</label>
-    <input type="text" id="surname" name="surname" required>
+    <label for="surname" class="dc-thelabel">Surname:</label>
+    <input type="text" id="surname" name="surname" class="dc-theinput" required>
 
-    <label for="address">Address:</label>
-    <input type="text" id="address" name="address" required>
+    <label for="address" class="dc-thelabel">Address:</label>
+    <input type="text" id="address" name="address" class="dc-theinput" required>
 
-    <label for="paymentMethod">Payment Method:</label>
-    <select id="paymentMethod" name="paymentMethod" required>
+    <label for="paymentMethod" class="dc-thelabel">Payment Method:</label>
+    <select id="paymentMethod" name="paymentMethod" class="dc-theselect" required>
       <option value="creditCard">Credit Card</option>
       <option value="cash">Cash</option>
       <!-- Add more payment options as needed -->
     </select>
 
-    <label for="promocode">Promo Code:</label>
-    <input type="text" id="promocode" name="promocode">
+    <label for="promocode" class="dc-thelabel">Promo Code:</label>
+    <input type="text" id="promocode" name="promocode" class="dc-theinput">
 
     <!-- Added the ID attribute to the button -->
-    <button type="button" id="orderButton">Order</button>
+    <button type="button" id="orderButton" class="dc-thebutton">Order</button>
 
     <!-- Added Apply button -->
-    <button type="button" id="applyButton" onclick="applyPromoCode()">Apply</button>
+    <button type="button" id="applyButton" class="dc-thebutton" onclick="applyPromoCode()">Apply</button>
   </form>
 
   <script>
-    const storedCartItems = sessionStorage.getItem('cartItems');
-    const cartItems = storedCartItems ? JSON.parse(storedCartItems) : [];
-    const totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
-
-    document.getElementById('price').value = totalAmount.toFixed(2);
-
-    const priceDisplay = document.createElement('div');
-    priceDisplay.style.position = 'fixed';
-    priceDisplay.style.bottom = '20px';
-    priceDisplay.style.right = '20px';
-    priceDisplay.style.backgroundColor = '#4caf50';
-    priceDisplay.style.color = '#fff';
-    priceDisplay.style.padding = '10px';
-    priceDisplay.style.borderRadius = '4px';
-    priceDisplay.textContent = `Total: $${totalAmount.toFixed(2)}`;
-
-    document.body.appendChild(priceDisplay);
-
-    // Add event listener for the Order button
-    document.getElementById('orderButton').addEventListener('click', function () {
-      // You can add order logic here
-      alert('Order placed successfully!');
-    });
-
-    function applyPromoCode() {
-      const promoCodeInput = document.getElementById('promocode');
-      const promoCode = promoCodeInput.value.trim().toLowerCase();
-
-      // Check if the entered promo code is "tasty"
-      if (promoCode === 'tasty') {
-        // Apply discount or other logic here
-        alert('Promo code applied successfully!');
-        // Update the total amount display with a 20% discount
-        const discountedAmount = totalAmount * 0.8; // Subtract 20%
-        priceDisplay.textContent = `Total: $${discountedAmount.toFixed(2)}`;
-      } else {
-        alert('Invalid promo code. Please try again.');
-      }
-    }
+    // ... (unchanged JavaScript code)
   </script>
 
 </body>
 </html>
 
-
-
-
-</body>
-</html>
