@@ -12,10 +12,9 @@
       background: linear-gradient(200deg, orange, #f8f9fa, green);
       background-size: 180% 180%;
       animation: gradient-animation 18s ease infinite;
-
     }
 
-    .menu-item {
+    .dc-menu-item {
       background-color: #fff;
       border: 1px solid #ddd;
       margin-bottom: 20px;
@@ -30,22 +29,22 @@
       color: #fff;
     }
 
-    .menu-item:hover {
+    .dc-menu-item:hover {
       transform: scale(1.02);
     }
 
-    .menu-item h3 {
+    .dc-menu-item h3 {
       color: #555;
     }
 
-    .menu-item-price {
+    .dc-menu-item-price {
       font-size: 1.2em;
       font-weight: bold;
       color: #28a745;
       margin-top: 10px;
     }
 
-    .cart {
+    .dc-cart {
       position: fixed;
       top: 20px;
       right: 20px;
@@ -55,23 +54,23 @@
       border-radius: 5px;
     }
 
-    .cart h4 {
+    .dc-cart h4 {
       margin-bottom: 10px;
     }
 
-    .cart-items {
+    .dc-cart-items {
       list-style: none;
       padding: 0;
       margin: 0;
     }
 
-    .cart-item {
+    .dc-cart-item {
       display: flex;
       justify-content: space-between;
       padding: 5px 0;
     }
 
-    .checkout-button {
+    .dc-checkout-button {
       margin-top: 10px;
     }
   </style>
@@ -83,111 +82,113 @@
   <div class="row" id="menuContainer">
 
     <div class="col-md-4">
-      <div class="menu-item fish" style="background-image: url('https://www.insauga.com/wp-content/uploads/2022/07/fish-dish-Mississauga.jpg');">
+      <div class="dc-menu-item dc-fish" style="background-image: url('https://www.insauga.com/wp-content/uploads/2022/07/fish-dish-Mississauga.jpg');">
         <h3>Fish</h3>
-        <p class="menu-item-price">$6.00</p>
+        <p class="dc-menu-item-price">$6.00</p>
         <button class="btn btn-primary" onclick="addToCart('Fish', 6.00)">Add to Cart</button>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="menu-item pizza-m" style="background-image: url('https://i.pinimg.com/564x/f1/be/36/f1be366cc6cbf3f9cf29f5c25bb51ca4.jpg');">
+      <div class="dc-menu-item dc-pizza-m" style="background-image: url('https://i.pinimg.com/564x/f1/be/36/f1be366cc6cbf3f9cf29f5c25bb51ca4.jpg');">
         <h3>Pizza Margherita</h3>
-        <p class="menu-item-price">$5.00</p>
+        <p class="dc-menu-item-price">$5.00</p>
         <button class="btn btn-primary" onclick="addToCart('Pizza Margherita', 5.00)">Add to Cart</button>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="menu-item pizza-p" style="background-image: url('https://i.pinimg.com/564x/52/e2/4f/52e24fcd8edb431faddaf06fa7ca8c17.jpg');">
+      <div class="dc-menu-item dc-pizza-p" style="background-image: url('https://i.pinimg.com/564x/52/e2/4f/52e24fcd8edb431faddaf06fa7ca8c17.jpg');">
         <h3>Pizza Pepperoni</h3>
-        <p class="menu-item-price">$6.00</p>
+        <p class="dc-menu-item-price">$6.00</p>
         <button class="btn btn-primary" onclick="addToCart('Pizza Pepperoni', 6.00)">Add to Cart</button>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="menu-item steak" style="background-image: url('https://www.mashed.com/img/gallery/chain-restaurant-steaks-ranked-from-worst-to-best/l-intro-1624458970.jpg');">
+      <div class="dc-menu-item steak" style="background-image: url('https://www.mashed.com/img/gallery/chain-restaurant-steaks-ranked-from-worst-to-best/l-intro-1624458970.jpg');">
         <h3>Steak</h3>
-        <p class="menu-item-price">$12.00</p>
+        <p class="dc-menu-item-price">$12.00</p>
         <button class="btn btn-primary" onclick="addToCart('Steak', 12.00)">Add to Cart</button>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="menu-item cheese-bur" style="background-image: url('https://i.pinimg.com/564x/82/6d/42/826d429c2c3b6bac4f434faa6347a78a.jpg');">
+      <div class="dc-menu-item cheese-bur" style="background-image: url('https://i.pinimg.com/564x/82/6d/42/826d429c2c3b6bac4f434faa6347a78a.jpg');">
         <h3>Cheese Burger</h3>
-        <p class="menu-item-price">$4.50</p>
+        <p class="dc-menu-item-price">$4.50</p>
         <button class="btn btn-primary" onclick="addToCart('Cheese Burger', 4.50)">Add to Cart</button>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="menu-item turbo-bur" style="background-image: url('https://i.pinimg.com/564x/41/52/a3/4152a3bfae6391f91ed5f69f55e6022b.jpg');">
+      <div class="dc-menu-item turbo-bur" style="background-image: url('https://i.pinimg.com/564x/41/52/a3/4152a3bfae6391f91ed5f69f55e6022b.jpg');">
         <h3>Turbo Burger</h3>
-        <p class="menu-item-price">$7.50</p>
+        <p class="dc-menu-item-price">$7.50</p>
         <button class="btn btn-primary" onclick="addToCart('Turbo Burger', 7.50)">Add to Cart</button>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="menu-item cola" style="background-image: url('https://i.pinimg.com/564x/3d/3a/43/3d3a432abbd2c5c834c413e56781692f.jpg');">
+      <div class="dc-menu-item cola" style="background-image: url('https://i.pinimg.com/564x/3d/3a/43/3d3a432abbd2c5c834c413e56781692f.jpg');">
         <h3>Coca Cola</h3>
-        <p class="menu-item-price">$2.00</p>
+        <p class="dc-menu-item-price">$2.00</p>
         <button class="btn btn-primary" onclick="addToCart('Coca Cola', 2.00)">Add to Cart</button>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="menu-item fanta" style="background-image: url('https://cdn.shopify.com/s/files/1/0558/6413/1764/files/Fanta_Logo_Design_History_Evolution_0_1024x1024.jpg?v=1693460247');">
+      <div class="dc-menu-item fanta" style="background-image: url('https://cdn.shopify.com/s/files/1/0558/6413/1764/files/Fanta_Logo_Design_History_Evolution_0_1024x1024.jpg?v=1693460247');">
         <h3>Fanta</h3>
-        <p class="menu-item-price">$2.00</p>
+        <p class="dc-menu-item-price">$2.00</p>
         <button class="btn btn-primary" onclick="addToCart('Fanta', 2.00)">Add to Cart</button>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="menu-item ice-tea" style="background-image: url('https://i.pinimg.com/564x/15/df/3d/15df3d14c4f674d012fef13c7627d027.jpg');">
+      <div class="dc-menu-item ice-tea" style="background-image: url('https://i.pinimg.com/564x/15/df/3d/15df3d14c4f674d012fef13c7627d027.jpg');">
         <h3>Ice Tea</h3>
-        <p class="menu-item-price">$2.00</p>
+        <p class="dc-menu-item-price">$2.00</p>
         <button class="btn btn-primary" onclick="addToCart('Ice Tea', 2.00)">Add to Cart</button>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="menu-item sprite" style="background-image: url('https://i.pinimg.com/564x/da/29/54/da29549b7fd367669b7d8502d9d0028c.jpg');">
+      <div class="dc-menu-item sprite" style="background-image: url('https://i.pinimg.com/564x/da/29/54/da29549b7fd367669b7d8502d9d0028c.jpg');">
         <h3>Sprite</h3>
-        <p class="menu-item-price">$2.00</p>
+        <p class="dc-menu-item-price">$2.00</p>
         <button class="btn btn-primary" onclick="addToCart('Sprite', 2.00)">Add to Cart</button>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="menu-item menu-m" style="background-image: url('https://i.pinimg.com/564x/0d/da/cb/0ddacbff839dddf824f03dc4f43a1ee6.jpg');">
+      <div class="dc-menu-item menu-m" style="background-image: url('https://i.pinimg.com/564x/0d/da/cb/0ddacbff839dddf824f03dc4f43a1ee6.jpg');">
         <h3>Medium Menu</h3>
-        <p class="menu-item-price">$3.50</p>
+        <p class="dc-menu-item-price">$3.50</p>
         <button class="btn btn-primary" onclick="addToCart('Menu-Medium', 3.50)">Add to Cart</button>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="menu-item menu-l" style="background-image: url('https://i.pinimg.com/564x/d3/26/96/d3269629c0d93b8cf16bcd0fc7c387ef.jpg');">
+      <div class="dc-menu-item menu-l" style="background-image: url('https://i.pinimg.com/564x/d3/26/96/d3269629c0d93b8cf16bcd0fc7c387ef.jpg');">
         <h3>Large Menu</h3>
-        <p class="menu-item-price">$4.50</p>
+        <p class="dc-menu-item-price">$4.50</p>
         <button class="btn btn-primary" onclick="addToCart('Menu-Large', 4.50)">Add to Cart</button>
       </div>
     </div>
 
+    
+
   </div>
 </div>
 
-<div class="cart" id="cart">
+<div class="dc-cart" id="cart">
   <h4>Shopping Cart</h4>
-  <ul class="cart-items" id="cartItems">
+  <ul class="dc-cart-items" id="cartItems">
     <!-- Cart items will be added dynamically here -->
   </ul>
   <p>Total: $<span id="totalAmount">0.00</span></p>
-  <button class="btn btn-success checkout-button" onclick="checkout()">Checkout</button>
+  <button class="btn btn-success dc-checkout-button" onclick="checkout()">Checkout</button>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -207,13 +208,13 @@
     const cartItemsElement = document.getElementById('cartItems');
     const totalAmountElement = document.getElementById('totalAmount');
 
-  
+    
     cartItemsElement.innerHTML = '';
 
-   
+    
     cartItems.forEach(item => {
       const listItem = document.createElement('li');
-      listItem.className = 'cart-item';
+      listItem.className = 'dc-cart-item';
       listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
       cartItemsElement.appendChild(listItem);
     });
@@ -222,13 +223,13 @@
     totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
     totalAmountElement.textContent = totalAmount.toFixed(2);
 
-   
+    
     sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
   }
 
   function checkout() {
-    
-    window.location.href = "https://dhurka2.github.io/webPROJECT/HTML/checkout.html";
+    // Redirect to the checkout page
+    window.location.href = "/HTML/checkout.html";
   }
 </script>
 
