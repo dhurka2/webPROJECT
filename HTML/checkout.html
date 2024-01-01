@@ -62,16 +62,25 @@
       border-radius: 4px;
       cursor: pointer;
     }
-
+    #cartInfo {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+    }
     #applyButton:hover {
       background-color: #2980b9;
     }
   </style>
 </head>
 <body class="dc-thebody">
+  <div id="cartInfo"></div>
 
   <form id="checkoutForm" class="dc-theform">
-    <!-- Assuming you have a way to pass the price to this page -->
+    
     <input type="hidden" id="price" name="price" value="0.00">
 
     <label for="name" class="dc-thelabel">Name:</label>
@@ -90,20 +99,34 @@
     </select>
     <label for="promocode" class="dc-thelabel">Promo Code:</label>
     <input type="text" id="promocode" name="promocode" class="dc-theinput">
-    <button type="button" id="orderButton" class="dc-thebutton">Order</button>
-
-    
-    <button type="button" id="applyButton" class="dc-thebutton" onclick="applyPromoCode()">Apply</button>
+     <button type="button" id="applyButton" class="dc-thebutton" onclick="applyPromoCode()">Apply</button>
+    <button type="button" id="orderButton" class="dc-thebutton" onclick="placeOrder()">Order</button>
   </form>
 
-  <script>
-    let cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
-    function displayCartInfo() {
-      const cartInfoElement = document.getElementById('cartInfo');
-      const totalPrice = cartItems.reduce((total, item) => total + item.price, 0).toFixed(2);
-      const numberOfProducts = cartItems.length;
+ <script>
+    function applyPromoCode() {
+      const promoCodeInput = document.getElementById('promocode');
+      const promoCode = promoCodeInput.value.trim().toLowerCase();
 
-      cartInfoElement.textContent = `Total: $${totalPrice} | Products: ${numberOfProducts}`;
+      if (promoCode === 'tasty') {
+        
+        const totalPriceElement = document.getElementById('totalPrice');
+        const originalPrice = parseFloat(document.getElementById('price').value);
+        const discountedPrice = originalPrice * 0.8; // 20% off
+
+        
+        totalPriceElement.textContent = `$${discountedPrice.toFixed(2)}`;
+        alert('Code is correct. You got 20% off!');
+      } else {
+        alert('Invalid promo code. Please try again.');
+      }
+    }
+
+
+    function placeOrder() {
+      
+      window.location.href = "https://dhurka2.github.io/webPROJECT/HTML/thankyou.html";
+    }
   </script>
 
 </body>
