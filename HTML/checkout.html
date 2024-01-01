@@ -87,22 +87,17 @@
     <select id="paymentMethod" name="paymentMethod" class="dc-theselect" required>
       <option value="creditCard">Credit Card</option>
       <option value="cash">Cash</option>
-      <!-- Add more payment options as needed -->
     </select>
-
     <label for="promocode" class="dc-thelabel">Promo Code:</label>
     <input type="text" id="promocode" name="promocode" class="dc-theinput">
-
-    <!-- Added the ID attribute to the button -->
     <button type="button" id="orderButton" class="dc-thebutton">Order</button>
 
-    <!-- Added Apply button -->
+    
     <button type="button" id="applyButton" class="dc-thebutton" onclick="applyPromoCode()">Apply</button>
   </form>
 
   <script>
     let cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
-
     function displayCartInfo() {
       const cartInfoElement = document.getElementById('cartInfo');
       const totalPrice = cartItems.reduce((total, item) => total + item.price, 0).toFixed(2);
