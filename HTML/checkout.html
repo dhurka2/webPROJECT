@@ -101,7 +101,14 @@
   </form>
 
   <script>
-    // ... (unchanged JavaScript code)
+    let cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+
+    function displayCartInfo() {
+      const cartInfoElement = document.getElementById('cartInfo');
+      const totalPrice = cartItems.reduce((total, item) => total + item.price, 0).toFixed(2);
+      const numberOfProducts = cartItems.length;
+
+      cartInfoElement.textContent = `Total: $${totalPrice} | Products: ${numberOfProducts}`;
   </script>
 
 </body>
