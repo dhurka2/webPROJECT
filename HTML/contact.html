@@ -1,56 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://dhurka2.github.io/webPROJECT/styles/contact.css">
+
+
 </head>
+
 <body>
-    <h2>Feedback</h2>
-<div class="mb-4 small">
-Please provide your feedback in the form below
-</div>
-<form name="feedback_form" id="feedback_form" method="post">
-<label>How do you rate your overall experience?</label>
-<div class="mb-3 d-flex flex-row py-1">
-  <div class="form-check mr-3">
-  <input class="form-check-input" type="radio" name="rating" id="rating_bad" value="bad">
-  <label class="form-check-label" for="rating_bad">
-    Bad
-  </label>
-  </div>
-  
-  <div class="form-check mx-3">
-  <input class="form-check-input" type="radio" name="rating" id="rating_good" value="good">
-  <label class="form-check-label" for="rating_good">
-    Good
-  </label>
-  </div>
-  
-  <div class="form-check mx-3">
-  <input class="form-check-input"  type="radio" name="rating" id="rating_excellent" value="excellent">
-  <label class="form-check-label" for="rating_excellent">
-    Excellent!
-  </label>
-  </div>
-</div>
-<div class="mb-4">
-  <label class="form-label"  for="feedback_comments">Comments:</label>
-  <textarea class="form-control" required rows="6" name="comments" id="feedback_comments" ></textarea>
-</div>
-<div class="row">
-  <div class="col">
-    <label class="form-label" for="feedback_name">Your Name:</label>
-    <input type="text" required name="name" class="form-control" id="feedback_name"/>
-  </div>
-  
-  <div class="col mb-4">
-    <label class="form-label" for="feedback_email">Email:</label>
-    <input type="email" name="email" required class="form-control" id="feedback_email"/>
-  </div>
-</div>
-<button type="submit" class="btn btn-success btn-lg" >Post</button>
-</form>
-    
+
+  <section class="dc-contact-us" id="dc-contact-section">
+    <form id="dc-contact" action="" method="post">
+     
+      <div class="dc-section-heading">
+        <h4>Contact us</h4>
+      </div>
+
+      <div class="dc-inputField">
+        <input type="name" name="name" id="dc-name" placeholder="Your name" autocomplete="on" required>
+        <span class="dc-valid_info_name"></span>
+      </div>
+
+      <div class="dc-inputField">
+        <input type="Email" name="email" id="dc-email" placeholder="Your email" required="" />
+        <span class="dc-valid_info_email"></span>
+      </div>
+
+      <div class="dc-inputField">
+        <textarea name="message" id="dc-message" placeholder="Your message"></textarea>
+        <span class="dc-valid_info_message"></span>
+      </div>
+
+      <div class="dc-inputField btn">
+        <button type="submit" id="dc-form-submit" class="dc-main-gradient-button" ensabled>Send a message</button>
+      </div>
+
+    </form>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
 </body>
+
+<script>
+    function validateForm() {
+      const name = document.getElementById('dc-name').value.trim();
+      const address = document.getElementById('dc-address').value.trim();
+      const message = document.getElementById('dc-message').value.trim();
+      const submitButton = document.getElementById('dc-form-submit');
+
+      if (name.length < 1 || address.length < 1 || message.length < 8) {
+        alert('Your message was not sent. Please provide a valid name, address, and at least 20 characters in the message box.');
+        submitButton.disabled = true;
+        return false; 
+      } else {
+
+        submitButton.disabled = false; 
+        return true; 
+      }
+    }
+  </script>
 </html>
