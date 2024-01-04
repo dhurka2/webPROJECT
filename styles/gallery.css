@@ -1,0 +1,20 @@
+body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: greenyellow;
+    }
+
+    .dc-carousel-container {
+      border: 2px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .dc-carousel-inner img {
+      width: 100%;
+      height: 100%;
+    }
