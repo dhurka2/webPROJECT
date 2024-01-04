@@ -1,0 +1,67 @@
+.dc-thebody {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      background: url("https://static.vecteezy.com/system/resources/previews/004/275/702/original/fast-food-seamless-background-illustration-simple-restaurant-menu-background-vector.jpg") center/cover fixed no-repeat;
+      background-attachment: fixed;
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    #dc-thebrand {
+      text-align: center;
+      font-size: 60px;
+      font-family:'Times New Roman', Times, serif;
+      color: black;
+      margin-top: 20px;
+    }
+
+    .dc-thesteak, .dc-thekebab2, .dc-themint {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      margin: 20px auto;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    }
+
+    .dc-thebreakfast, .dc-thelunch, .dc-thedrink {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+    }
+
+    .dc-theul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .dc-theli {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .dc-thehr {
+      width: 80%;
+      margin: 10px auto;
+      border: 0.5px solid #000;
+    }
+
+    .dc-thespan {
+      margin-top: 10px;
+      font-size: 20px;
+      color: #555;
+    }
+
+    @media screen and (max-width: 768px) {
+      .dc-thesteak, .dc-thebreakfast, .dc-thelunch, .dc-thedrink, .dc-thekebab2, .dc-themint {
+        max-width: 100%;
+      }
+    }
