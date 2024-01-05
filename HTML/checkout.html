@@ -1,39 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout</title>
-  <link rel="stylesheet" href="https://dhurka2.github.io/webPROJECT/styles/checkout.css"
-</head>
-<body class="dc-thebody">
-  <div id="cartInfo"></div>
-
-  <form id="checkoutForm" class="dc-theform">
-    
-    <input type="hidden" id="price" name="price" value="0.00">
-
-    <label for="name" class="dc-thelabel">Name:</label>
-    <input type="text" id="name" name="name" class="dc-theinput" required>
-
-    <label for="surname" class="dc-thelabel">Surname:</label>
-    <input type="text" id="surname" name="surname" class="dc-theinput" required>
-
-    <label for="address" class="dc-thelabel">Address:</label>
-    <input type="text" id="address" name="address" class="dc-theinput" required>
-
-    <label for="paymentMethod" class="dc-thelabel">Payment Method:</label>
-    <select id="paymentMethod" name="paymentMethod" class="dc-theselect" required>
-      <option value="creditCard">Credit Card</option>
-      <option value="cash">Cash</option>
-    </select>
-    <label for="promocode" class="dc-thelabel">Promo Code:</label>
-    <input type="text" id="promocode" name="promocode" class="dc-theinput">
-     <button type="button" id="applyButton" class="dc-thebutton" onclick="applyPromoCode()">Apply</button>
-    <button type="button" id="orderButton" class="dc-thebutton" onclick="placeOrder()">Order</button>
-  </form>
-
- <script>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+      .dc-thebody {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+  
+      .dc-theform {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+  
+      .dc-thelabel {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+      }
+  
+      .dc-theinput, .dc-theselect {
+        width: calc(100% - 16px);
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+      }
+  
+      .dc-thebutton {
+        width: calc(50% - 4px);
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+  
+      .dc-thebutton:hover {
+        background-color: #45a049;
+      }
+  
+      #applyButton {
+        width: calc(50% - 4px);
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      #cartInfo {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      #applyButton:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body class="dc-thebody">
+    <div id="cartInfo">Total: $<span id="totalPrice">0.00</span></div>
+  
+    <form id="checkoutForm" class="dc-theform">
+      
+      <input type="hidden" id="price" name="price" value="0.00">
+  
+      <label for="name" class="dc-thelabel">Name:</label>
+      <input type="text" id="name" name="name" class="dc-theinput" required="">
+  
+      <label for="surname" class="dc-thelabel">Surname:</label>
+      <input type="text" id="surname" name="surname" class="dc-theinput" required="">
+  
+      <label for="address" class="dc-thelabel">Address:</label>
+      <input type="text" id="address" name="address" class="dc-theinput" required="">
+  
+      <label for="paymentMethod" class="dc-thelabel">Payment Method:</label>
+      <select id="paymentMethod" name="paymentMethod" class="dc-theselect" required="">
+        <option value="creditCard">Credit Card</option>
+        <option value="cash">Cash</option>
+      </select>
+      <label for="promocode" class="dc-thelabel">Promo Code:</label>
+      <input type="text" id="promocode" name="promocode" class="dc-theinput">
+       <button type="button" id="applyButton" class="dc-thebutton" onclick="applyPromoCode()">Apply</button>
+      <button type="button" id="orderButton" class="dc-thebutton" onclick="placeOrder()">Order</button>
+    </form>
+  
+   <script>
     document.addEventListener("DOMContentLoaded", function () {
     const priceInput = document.getElementById('price');
     const totalPriceElement = document.getElementById('totalPrice');
@@ -105,8 +173,10 @@ function placeOrder() {
     }
 }
 
-  </script>
-
-</body>
-</html>
+    </script>
+  
+  
+  
+  
+  </body></html>
 
