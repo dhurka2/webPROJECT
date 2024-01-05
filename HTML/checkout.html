@@ -34,29 +34,77 @@
   </form>
 
  <script>
-    function applyPromoCode() {
-      const promoCodeInput = document.getElementById('promocode');
-      const promoCode = promoCodeInput.value.trim().toLowerCase();
+    document.addEventListener("DOMContentLoaded", function () {
+    const priceInput = document.getElementById('price');
+    const totalPriceElement = document.getElementById('totalPrice');
 
-      if (promoCode === 'tasty') {
-        
-        const totalPriceElement = document.getElementById('totalPrice');
-        const originalPrice = parseFloat(document.getElementById('price').value);
+    // Retrieve the original price and set it in the hidden input field
+    const originalPrice = parseFloat(priceInput.value);
+    
+    const storedTotalAmount = sessionStorage.getItem('totalAmount');
+    
+    if (storedTotalAmount) {
+        totalPriceElement.textContent = storedTotalAmount;
+    }
+
+    function resetToOriginalPrice() {
+        priceInput.value = originalPrice.toFixed(2);
+        totalPriceElement.textContent = `$${originalPrice.toFixed(2)}`;
+    }
+
+    // Reset the price when leaving the page
+    window.addEventListener('beforeunload', function() {
+        resetToOriginalPrice();
+    });
+});
+
+function applyPromoCode() {
+    const promoCodeInput = document.getElementById('promocode');
+    const promoCode = promoCodeInput.value.trim().toLowerCase();
+
+    // Retrieve the original price from the hidden input field
+    const originalPrice = parseFloat(document.getElementById('price').value);
+
+    if (promoCode === 'tasty') {
         const discountedPrice = originalPrice * 0.8; // 20% off
 
-        
-        totalPriceElement.textContent = `$${discountedPrice.toFixed(2)}`;
+        // Update the hidden input field with the discounted price
+        document.getElementById('price').value = discountedPrice.toFixed(2);
+
+        // Update the total price displayed on the page
+        document.getElementById('totalPrice').textContent = `$${discountedPrice.toFixed(2)}`;
+
         alert('Code is correct. You got 20% off!');
-      } else {
+    } else {
+        // Reset to the original price when the promo code is not valid
+        resetToOriginalPrice();
         alert('Invalid promo code. Please try again.');
-      }
     }
+}
 
+function resetToOriginalPrice() {
+    const priceInput = document.getElementById('price');
+    const totalPriceElement = document.getElementById('totalPrice');
+    
+    const originalPrice = parseFloat(priceInput.value);
 
-    function placeOrder() {
-      
-      window.location.href = "https://dhurka2.github.io/webPROJECT/HTML/thankyou.html";
+    priceInput.value = originalPrice.toFixed(2);
+    totalPriceElement.textContent = `$${originalPrice.toFixed(2)}`;
+}
+
+function placeOrder() {
+    const nameInput = document.getElementById('name').value.trim();
+    const surnameInput = document.getElementById('surname').value.trim();
+    const addressInput = document.getElementById('address').value.trim();
+    const paymentMethodInput = document.getElementById('paymentMethod').value;
+
+    if (nameInput && surnameInput && addressInput) {
+        window.location.href = "https://dhurka2.github.io/webPROJECT/HTML/thankyou.html";
+    } else {
+        alert('Please fill in all the required information.');
     }
+}
+
   </script>
 
 </body>
