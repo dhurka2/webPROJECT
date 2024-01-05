@@ -6,6 +6,7 @@
     <title>Food Menu</title>
   </head>
   <body>
+    
   
   <div class="container">
     <div class="row" id="menuContainer">
@@ -118,7 +119,7 @@
         <div class="dropdown-menu" id="cartDropdown">
             <h4>Shopping Cart</h4>
             <ul class="cart-items" id="cartItems">
-                <!-- Shfaqja e proodukteve tek shporta -->
+                <!-- Cart items will be displayed here -->
             </ul>
             <p>Total: $<span id="totalAmount">0.00</span></p>
             <button class="btn btn-success checkout-button" onclick="checkout()">Checkout</button>
@@ -132,95 +133,65 @@
   
   <script>
     let cartItems = [];
-    let totalAmount = 0;
-  
-    function addToCart(itemName, itemPrice) {
-      cartItems.push({ name: itemName, price: itemPrice });
-      updateCart();
-    }
-  
-    function updateCart() {
-      const cartItemsElement = document.getElementById('cartItems');
-      const totalAmountElement = document.getElementById('totalAmount');
-  
-      // Clear the cart
-      cartItemsElement.innerHTML = '';
-  
-      // Update the cart items
-      cartItems.forEach(item => {
+let totalAmount = 0;
+
+function addToCart(itemName, itemPrice) {
+    cartItems.push({ name: itemName, price: itemPrice });
+    updateCart();
+}
+
+function removeItem(index) {
+    cartItems.splice(index, 1);
+    updateCart();
+}
+
+function updateCart() {
+    const cartItemsElement = document.getElementById('cartItems');
+    const totalAmountElement = document.getElementById('totalAmount');
+
+    cartItemsElement.innerHTML = '';
+
+    // Group identical items and display the quantity
+    const groupedItems = {};
+    cartItems.forEach(item => {
+        const key = item.name;
+        groupedItems[key] = groupedItems[key] || { name: item.name, price: 0, quantity: 0 };
+        groupedItems[key].price += item.price;
+        groupedItems[key].quantity += 1;
+    });
+
+    // Update the cart items with a 20% discount
+    Object.values(groupedItems).forEach(groupedItem => {
         const listItem = document.createElement('li');
         listItem.className = 'cart-item';
-        listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+
+        // Apply a 20% discount
+        const discountedPrice = groupedItem.price * 0.8;
+
+        listItem.innerHTML = `
+            ${groupedItem.name} ${groupedItem.quantity > 1 ? `(${groupedItem.quantity}x)` : ''}
+            - $${discountedPrice.toFixed(2)}
+            <span class="remove-button" onclick="removeItem(${cartItems.indexOf(groupedItem)})">Remove</span>
+        `;
         cartItemsElement.appendChild(listItem);
-      });
-  
-     
-      totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
-      totalAmountElement.textContent = totalAmount.toFixed(2);
-  
-     
-      sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
-    }
-  
-    function checkout() {
-      
-      window.location.href = "https://dhurka2.github.io/webPROJECT/HTML/checkout.html";
-    }
-
-
-    let offsetX, offsetY;
-
-    document.addEventListener("dragover", function (e) {
-        e.preventDefault();
     });
 
-    document.addEventListener("drop", function (e) {
-        document.getElementById("cart").style.left = e.clientX - offsetX + "px";
-        document.getElementById("cart").style.top = e.clientY - offsetY + "px";
-    });
+    // Update the total amount with the discount
+    totalAmount = cartItems.reduce((total, item) => total + item.price, 0) * 0.8;
+    totalAmountElement.textContent = totalAmount.toFixed(2);
 
-    // Prevent the dropdown from closing when clicking inside it
-    document.getElementById("cartDropdown").addEventListener("click", function (e) {
-        e.stopPropagation();
-    });
+    // Store the cart items and total amount in session storage
+    sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+    sessionStorage.setItem('totalAmount', totalAmount.toFixed(2));
+}
 
-    function removeItem(index) {
-        cartItems.splice(index, 1);
-        updateCart();
-    }
+function checkout() {
+    // Redirect to the checkout page
+    window.location.href = "checkout.html";
+}
 
-    function updateCart() {
-        const cartItemsElement = document.getElementById('cartItems');
-        const totalAmountElement = document.getElementById('totalAmount');
 
-        cartItemsElement.innerHTML = '';
-
-       
-        const groupedItems = {};
-        cartItems.forEach(item => {
-            const key = item.name;
-            groupedItems[key] = groupedItems[key] || { name: item.name, price: 0, quantity: 0 };
-            groupedItems[key].price += item.price;
-            groupedItems[key].quantity += 1;
-        });
-
-       
-        Object.values(groupedItems).forEach(groupedItem => {
-            const listItem = document.createElement('li');
-            listItem.className = 'cart-item';
-            listItem.innerHTML = `
-                ${groupedItem.name} ${groupedItem.quantity > 1 ? `(${groupedItem.quantity}x)` : ''}
-                - $${groupedItem.price.toFixed(2)}
-                <span class="remove-button" onclick="removeItem(${cartItems.indexOf(groupedItem)})">Remove</span>
-            `;
-            cartItemsElement.appendChild(listItem);
-        });
-
-        totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
-        totalAmountElement.textContent = totalAmount.toFixed(2);
-
-        sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
-    }
+    
   </script>
   </body></html>
 
