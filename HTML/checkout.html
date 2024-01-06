@@ -102,29 +102,32 @@
     </form>
   
    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const priceInput = document.getElementById('price');
-    const totalPriceElement = document.getElementById('totalPrice');
+     document.addEventListener("DOMContentLoaded", function () {
+        const priceInput = document.getElementById('price');
+        const totalPriceElement = document.getElementById('totalPrice');
 
-    // Retrieve the original price and set it in the hidden input field
-    const originalPrice = parseFloat(priceInput.value);
-    
-    const storedTotalAmount = sessionStorage.getItem('totalAmount');
-    
-    if (storedTotalAmount) {
-        totalPriceElement.textContent = storedTotalAmount;
-    }
+        // Retrieve the original price and set it in the hidden input field
+        const originalPrice = parseFloat(priceInput.value);
 
-    function resetToOriginalPrice() {
-        priceInput.value = originalPrice.toFixed(2);
-        totalPriceElement.textContent = `$${originalPrice.toFixed(2)}`;
-    }
+        const storedTotalAmount = sessionStorage.getItem('totalAmount');
 
-    // Reset the price when leaving the page
-    window.addEventListener('beforeunload', function() {
+        if (storedTotalAmount) {
+            totalPriceElement.textContent = storedTotalAmount;
+        }
+
+        function resetToOriginalPrice() {
+            priceInput.value = originalPrice.toFixed(2);
+            totalPriceElement.textContent = `$${originalPrice.toFixed(2)}`;
+        }
+
+        // Reset the price when leaving the page
+        window.addEventListener('beforeunload', function() {
+    const promoCodeInput = document.getElementById('promocode');
+    if (promoCodeInput.value.trim().toLowerCase() === 'tasty') {
         resetToOriginalPrice();
-    });
+    }
 });
+
 
 function applyPromoCode() {
     const promoCodeInput = document.getElementById('promocode');
