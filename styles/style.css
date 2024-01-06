@@ -75,3 +75,7 @@ body {
                 background-size: cover;
             }
         }
+.dc-foto1 {
+  width: 80px !important;
+  height: 80px !important;
+}
