@@ -151,7 +151,7 @@ function updateCart() {
 
     cartItemsElement.innerHTML = '';
 
-    // Group identical items and display the quantity
+    
     const groupedItems = {};
     cartItems.forEach(item => {
         const key = item.name;
@@ -160,12 +160,12 @@ function updateCart() {
         groupedItems[key].quantity += 1;
     });
 
-    // Update the cart items with a 20% discount
+    
     Object.values(groupedItems).forEach(groupedItem => {
         const listItem = document.createElement('li');
         listItem.className = 'cart-item';
 
-        // Apply a 20% discount
+        
         const discountedPrice = groupedItem.price * 0.8;
 
         listItem.innerHTML = `
@@ -176,19 +176,24 @@ function updateCart() {
         cartItemsElement.appendChild(listItem);
     });
 
-    // Update the total amount with the discount
+   
     totalAmount = cartItems.reduce((total, item) => total + item.price, 0) * 0.8;
     totalAmountElement.textContent = totalAmount.toFixed(2);
 
-    // Store the cart items and total amount in session storage
+    
     sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
     sessionStorage.setItem('totalAmount', totalAmount.toFixed(2));
 }
 
 function checkout() {
-    // Redirect to the checkout page
+    
+    sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+    sessionStorage.setItem('totalAmount', totalAmount.toFixed(2));
+
+    
     window.location.href = "checkout.html";
 }
+
 
 
     
