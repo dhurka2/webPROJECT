@@ -83,3 +83,83 @@ body {
 .btn, .btn-primary {
   background-color: #E7B10A;
 }
+
+.dc-copyright {
+   font-size: 20px !important;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  h6 {
+    font-size: 25px;
+text-decoration: none !important; 
+}
+  .dc-footer {
+    background-color: #242121;
+    padding: 20px 0 30px;
+}
+.dc-footer-heading {
+    letter-spacing: 2px;
+}
+
+.dc-footer-link a {
+    color: #acacac;
+    line-height: 40px;
+    font-size: 24px;
+    transition: all 0.5s;
+}
+
+.dc-footer-link a:hover {
+    color: #1bbc9b;
+}
+
+
+.dc-footer-social-icon {
+    font-size: 15px;
+    height: 34px;
+    width: 34px;
+    line-height: 34px;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+}
+
+.dc-facebook {
+    background-color: #4e71a8;
+    color: #ffffff;
+}
+
+.dc-twitter {
+    background-color: #55acee;
+    color: #ffffff;
+}
+
+.dc-google {
+    background-color: #d6492f;
+    color: #ffffff;
+}
+
+.dc-apple {
+    background-color: #424041;
+    color: #ffffff;
+}
+
+.dc-footer-alt {
+    color: #acacac;
+}
+
+.dc-footer-heading {
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.dc-footer-heading:after {
+    content: '';
+    width: 25px;
+    border-bottom: 1px solid #FFF;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    border-bottom: 1px solid #1bbc9b;
+}
