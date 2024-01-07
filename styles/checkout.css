@@ -33,7 +33,7 @@
     }
 
     .dc-thebutton {
-      width: calc(50% - 4px);
+      width: calc(100% - 15px);
       background-color: #4caf50;
       color: #fff;
       padding: 10px 15px;
@@ -46,15 +46,7 @@
       background-color: #45a049;
     }
 
-    #applyButton {
-      width: calc(50% - 4px);
-      background-color: #3498db;
-      color: #fff;
-      padding: 10px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
+    
     #cartInfo {
       position: fixed;
       top: 20px;
@@ -64,6 +56,5 @@
       padding: 10px;
       border-radius: 5px;
     }
-    #applyButton:hover {
-      background-color: #2980b9;
+   
     }
