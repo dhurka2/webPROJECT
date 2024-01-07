@@ -15,26 +15,15 @@
             <h1 class="display-3 shining-text">Special Offer !</h1>
             <h2 class="display-4 shining-text">Get 20% off!</h2>
             <p class="lead shining-text">Use code "<span id="discountCode">tasty</span>"</p>
-            <button class="btn btn-primary" onclick="copyDiscountCode()">Copy Code</button>
+            <button class="btn btn-primary" onclick="applyDiscountCode()">Apply Code</button>
         </div>
     </div>
 
     <script>
-        function copyDiscountCode() {
-            var discountCode = document.getElementById('discountCode');
-            var codeText = discountCode.innerText;
-
-            var textarea = document.createElement('textarea');
-            textarea.value = codeText;
-            document.body.appendChild(textarea);
-
-            textarea.select();
-            document.execCommand('copy');
-
-            document.body.removeChild(textarea);
-
-            alert('Code copied: ' + codeText);
-        }
+        function applyDiscountCode() {
+        // Add logic here to apply the 20% discount to every product
+        alert('Promo code activated! You will now get 20% off on every product.');
+    }
     </script>
 
 
