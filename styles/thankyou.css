@@ -1,37 +1,53 @@
  body {
+            background-color: #f8f9fa;
+            color: #495057;
             font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        header {
-            background-color: #333;
+        .dc-site-header {
+            background-color: #343a40;
             color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .main-content {
             text-align: center;
             padding: 20px;
         }
 
-        .main-content__body {
-            font-size: 1.5em;
-            color: #333;
+        .dc-site-header-title {
+            margin: 0;
+            font-size: 2.5em;
         }
 
-        .success-icon {
-            font-size: 5em;
+        .dc-main-content {
+            text-align: center;
+            margin: 250px auto; /* Centering the main content horizontally */
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px; /* Setting a maximum width for better readability */
+        }
+
+        .dc-success-icon {
             color: #28a745;
-            margin-top: 220px;
+            font-size: 3em;
         }
 
-        footer {
-            background-color: #333;
+        .dc-main-content-body {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        .dc-site-footer {
+            background-color: #343a40;
             color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 10px 0;
             position: fixed;
             bottom: 0;
             width: 100%;
         }
+
+        .dc-site-footer-fineprint {
+            margin: 0;
